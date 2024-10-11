@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:title>Edit Produk - {{ $product->product_name }}</x-slot:title>
     <div class="mx-12">
-        <form action="{{ route('daftar-produk.update', $product) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('daftar-produk.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="w-1/5">

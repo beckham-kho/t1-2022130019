@@ -7,7 +7,7 @@
         </div>
     @endif
     <a href="{{ route('daftar-produk.create') }}" class="rounded-md bg-blue-700 p-2 text-white">Add Product</a>
-    <div class="container mx-auto m-2">
+    <div class="container mx-auto mt-4 m-2">
         <table class="table-auto">
             <thead>
                 <th class="px-4">ID</th>
@@ -33,7 +33,7 @@
                     <td class="border-t-2 border-gray-300 p-4">{{ $product->origin }}</td>
                     <td class="border-t-2 border-gray-300 p-4">{{ $product->quantity }}</td>
                     <td class="border-t-2 border-gray-300 p-4">
-                        <img src="{{ $product->product_image ? Storage::url($product->product_image) : asset('img/no-image.png') }}" alt="No Product Image">
+                        <img src="{{ $product->product_image ? Storage::url($product->product_image) : asset('img/no-image.jpg') }}" alt="No Product Image" class="w-20">
                     </td>
                     <td class="border-t-2 border-gray-300 p-4">{{ $product->created_at }}</td>
                     <td class="border-t-2 border-gray-300 p-4">{{ $product->updated_at }}</td>
@@ -48,7 +48,9 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="9">Tidak ada produk</td>
+                    <td colspan="11">
+                        <h1 class="mt-4 mx-auto text-3xl font-semibold">Tidak ada produk</h1>
+                    </td>
                 </tr>
                 @endforelse
             </tbody>
